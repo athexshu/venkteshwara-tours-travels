@@ -6,12 +6,12 @@ const FloatingActions = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleWhatsApp = () => {
-    const whatsappUrl = `https://wa.me/+919876543210?text=${encodeURIComponent("Hi! I'm interested in booking a tour with Vyankateshwara Travale.")}`;
+    const whatsappUrl = `https://wa.me/+919766426233?text=${encodeURIComponent("Hi! I'm interested in booking a tour with Vyankateshwara Travale.")}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const handleCall = () => {
-    window.location.href = 'tel:+919876543210';
+    window.location.href = 'tel:+919766426233';
   };
 
   return (

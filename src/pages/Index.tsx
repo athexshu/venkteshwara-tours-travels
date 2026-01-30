@@ -118,12 +118,12 @@ Phone: ${formData.phone}
 Email: ${formData.email}
 Message: ${formData.message}`;
     
-    const whatsappUrl = `https://wa.me/+919876543210?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/+919766426233?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const handleCall = () => {
-    window.location.href = 'tel:+919876543210';
+    window.location.href = 'tel:+919766426233';
   };
 
   const openDestinationModal = (destination) => {
@@ -834,7 +834,7 @@ Message: ${formData.message}`;
                         <Button 
                           onClick={() => {
                             const message = `Hi! I'm interested in the ${selectedDestination.title} tour package. Please share more details.`;
-                            const whatsappUrl = `https://wa.me/+919876543210?text=${encodeURIComponent(message)}`;
+                            const whatsappUrl = `https://wa.me/+919766426233?text=${encodeURIComponent(message)}`;
                             window.open(whatsappUrl, '_blank');
                           }}
                           className="w-full btn-sacred"
@@ -848,7 +848,7 @@ Message: ${formData.message}`;
                         <Button 
                           variant="outline"
                           onClick={() => {
-                            window.location.href = `tel:+919876543210`;
+                            window.location.href = `tel:+919766426233`;
                           }}
                           className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                         >
