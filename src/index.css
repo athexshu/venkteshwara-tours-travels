@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Spiritual Travel Design System - Vyankateshwara Travale
+Warm, blessed, and premium colors. All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base spiritual palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 15%;
+
+    /* Sacred Gold - Primary brand color */
+    --primary: 43 74% 49%; /* Gold #D4AF37 converted to HSL */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 45 85% 65%;
+
+    /* Sacred Maroon - Secondary brand color */
+    --secondary: 0 100% 25%; /* Maroon #800000 converted to HSL */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Pure White - Purity and peace */
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 15%;
+
+    /* Warm gradients for spiritual aura */
+    --gradient-divine: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 50%, hsl(43 100% 75%) 100%);
+    --gradient-sunset: linear-gradient(180deg, hsl(25 100% 85%) 0%, hsl(var(--primary)) 50%, hsl(var(--secondary)) 100%);
+    --gradient-blessing: radial-gradient(ellipse at center, hsl(var(--primary-glow) / 0.3) 0%, transparent 70%);
+
+    /* Card and surface colors */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+    --card-blessed: 43 20% 98%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    /* Muted colors for subtle text */
+    --muted: 30 15% 94%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Spiritual glow and shadows */
+    --shadow-divine: 0 10px 40px hsl(var(--primary) / 0.2);
+    --shadow-blessed: 0 8px 32px hsl(var(--primary-glow) / 0.15);
+    --glow-sacred: 0 0 30px hsl(var(--primary-glow) / 0.4);
+
+    /* Interactive states */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 20% 90%;
+    --input: 30 15% 94%;
+    --ring: var(--primary);
+
+    /* Smooth transitions */
+    --transition-divine: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-blessing: transform 0.3s ease, box-shadow 0.3s ease;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Evening mode for spiritual ambiance */
+  .dark {
+    --background: 25 25% 8%;
+    --foreground: 43 20% 95%;
+
+    --card: 25 20% 12%;
+    --card-foreground: 43 15% 90%;
+    --card-blessed: 25 25% 10%;
+
+    --primary: 43 80% 60%;
+    --primary-foreground: 25 25% 8%;
+    --primary-glow: 45 90% 70%;
+
+    --secondary: 0 80% 35%;
+    --secondary-foreground: 43 15% 90%;
+
+    --accent: 25 20% 15%;
+    --accent-foreground: 43 15% 90%;
+
+    --muted: 25 15% 18%;
+    --muted-foreground: 43 10% 65%;
+
+    --border: 25 15% 20%;
+    --input: 25 15% 18%;
+    --ring: var(--primary);
+
+    --shadow-divine: 0 10px 40px hsl(var(--primary) / 0.3);
+    --shadow-blessed: 0 8px 32px hsl(var(--primary-glow) / 0.2);
+    --glow-sacred: 0 0 40px hsl(var(--primary-glow) / 0.5);
+
+    --sidebar-background: 25 25% 8%;
+    --sidebar-foreground: 43 15% 90%;
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: 25 25% 8%;
+    --sidebar-accent: 25 20% 12%;
+    --sidebar-accent-foreground: 43 15% 90%;
+    --sidebar-border: 25 15% 20%;
+    --sidebar-ring: var(--primary);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  /* Divine glow effect for buttons and cards */
+  .glow-divine {
+    box-shadow: var(--shadow-divine);
+    transition: var(--transition-blessing);
+  }
+  
+  .glow-divine:hover {
+    box-shadow: var(--glow-sacred);
+    transform: translateY(-2px);
+  }
+
+  /* Sacred button with spiritual glow */
+  .btn-sacred {
+    @apply bg-gradient-to-r from-primary via-primary-glow to-primary;
+    @apply text-primary-foreground font-semibold px-8 py-4 rounded-full;
+    @apply transition-all duration-300;
+    @apply shadow-lg hover:shadow-xl;
+    box-shadow: var(--shadow-divine);
+  }
+  
+  .btn-sacred:hover {
+    @apply scale-105;
+    box-shadow: var(--glow-sacred);
+  }
+
+  /* Blessed card style */
+  .card-blessed {
+    @apply bg-card-blessed rounded-2xl p-6;
+    @apply border border-border/20;
+    @apply transition-all duration-300;
+    background: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--card-blessed)) 100%);
+  }
+  
+  .card-blessed:hover {
+    @apply scale-105;
+    box-shadow: var(--shadow-blessed);
+  }
+
+  /* Fade-in animation classes */
+  .fade-in-up {
+    @apply opacity-0 translate-y-8;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .fade-in-up-delay-1 {
+    animation-delay: 0.2s;
+  }
+  
+  .fade-in-up-delay-2 {
+    animation-delay: 0.4s;
+  }
+  
+  .fade-in-up-delay-3 {
+    animation-delay: 0.6s;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* Smooth gradient animations */
+@keyframes divineGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-divine-gradient {
+  background-size: 200% 200%;
+  animation: divineGradient 6s ease infinite;
+}
